@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Challenge1</title>
+  </head>
+  <body>
+    <script>
+      //destructuring array
+      const numbersArray = ["apple", "orange", "peach"];
+      const [index0, index1, index2] = numbersArray;
+      console.log(index0);
+      console.log(index1);
+      console.log(index2);
+
+      //destructuring object
+
+      const person = {
+        name: "abcde",
+        age: 10,
+        gender: "m",
+      };
+
+      let { name, age, ...rest } = person;
+      console.log(name);
+      console.log(age);
+
+      //spread operator
+
+      const array1 = [1, 2, 3];
+      const array2 = [4, 5, 6];
+      let array3 = array1.concat(array2);
+      console.log(array3);
+
+      const basicDetails = {
+        name: "abcde",
+        age: 10,
+        gender: "m",
+      };
+      const educationDetails = {
+        degree: "xyz",
+        college: "anc",
+      };
+
+      let personOb = { ...basicDetails, ...educationDetails };
+      console.log(personOb);
+
+      //to find largest number
+
+      function largestNumber(numArray) {
+        var largest = numArray[0];
+
+        for (var i = 0; i < numArray.length; i++) {
+          if (largest < numArray[i]) {
+            largest = numArray[i];
+          }
+        }
+        console.log(largest);
+      }
+      largestNumber([1, 5, 7, 9]);
+      largestNumber([-1, -5, 0, -100]);
+
+      //to return updated salaries
+
+      function updateSalaries(employeesarray, percent) {
+        for (var i = 0; i < employeesarray.length; i++) {
+          employeesarray[i] =
+            employeesarray[i] + employeesarray[i] * (percent / 100);
+        }
+        console.log(employeesarray);
+      }
+      updateSalaries([100, 500, 700, 400], 10);
+    </script>
+  </body>
+</html>
